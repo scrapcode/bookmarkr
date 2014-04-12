@@ -13,9 +13,14 @@ img {
   margin: 0 auto;
   }
 // override for the 'Home' navigation link
-.navbar-brand {
-  font-size: inherit;
-  }
+.navbar {
+  margin-top: 20px;
+}
+
+h1 {
+  padding: 0;
+  margin: 0 0 10px 0;
+}
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
@@ -42,10 +47,7 @@ img {
 main {
   @extend .container;
   padding-bottom: 80px;
-  width: 100%;
-  margin-top: 51px; // accommodate the navbar
   }
 section {
   @extend .row;
-  margin-top: 20px;
   }
