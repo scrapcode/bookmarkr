@@ -1,0 +1,11 @@
+class CreateMarks < ActiveRecord::Migration
+  def change
+    create_table :marks do |t|
+      t.belongs_to :user, index: true
+      t.string :title
+      t.string :url
+
+      t.timestamps
+    end
+  end
+end
