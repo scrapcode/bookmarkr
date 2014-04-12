@@ -18,5 +18,5 @@ javascript:(function(){var%20a=window,b=document,c=encodeURIComponent,d=a.open("
 ### Change Log
 _V0.1.1_
 * Complete recode from previous project [Zipmark](http://github.com/scrapcode/zipmark)
-* Migrated to rails 4.*
-* Created own relationships model instead of relying on [acts_as_taggable_on](https://github.com/mbleigh/acts-as-taggable-on)
+* Migrate to rails 4.*
+* Create own relationships model instead of relying on [acts_as_taggable_on](https://github.com/mbleigh/acts-as-taggable-on)
