@@ -3,7 +3,11 @@ class MarksController < ApplicationController
   before_action :correct_user,     only: [:update, :destroy]
 
   def new
-    @mark = current_user.marks.build(mark_params)
+    unless params[:title] and params[:url]
+      @mark = current_user.marks.new
+    else
+      @mark = current_user.marks.build(mark_params_remote)
+    end
   end
   
   # POST /marks
@@ -50,6 +54,10 @@ class MarksController < ApplicationController
 
     def mark_params
       params.require(:mark).permit(:title, :url, :tag_list)
+    end
+    
+  def mark_params_remote
+    params.permit(:title, :url)
     end
   
     def correct_user
