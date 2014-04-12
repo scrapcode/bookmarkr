@@ -3,7 +3,7 @@ class MarksController < ApplicationController
   before_action :correct_user,     only: [:update, :destroy]
 
   def new
-    @mark = current_user.marks.new
+    @mark = current_user.marks.build(mark_params)
   end
   
   # POST /marks
@@ -13,7 +13,7 @@ class MarksController < ApplicationController
 
     respond_to do |format|
       if @mark.save
-        format.html { redirect_to current_user, notice: 'Mark was successfully created.' }
+        format.html { redirect_to current_user, flash[:notice] => 'Mark was successfully created.' }
         format.json { render :show, status: :created, location: @mark }
       else
         format.html { render :new }
@@ -26,8 +26,8 @@ class MarksController < ApplicationController
   # PATCH/PUT /marks/1.json
   def update
     respond_to do |format|
-      if @mark.update(mark_params)
-        format.html { redirect_to current_user, notice: 'Mark was successfully updated.' }
+      if @mark.update(mark_params).
+        format.html { redirect_to current_user, flash[:notice] => 'Mark was successfully updated.' }
         format.json { render :show, status: :ok, location: @mark }
       else
         format.html { render :edit }

@@ -1,6 +1,7 @@
 # Bookmarkr
 By: [Cam Cecil](http://github.com/scrapcode)
-Open Source cloud bookmarking application.
+
+Open Source cloud bookmarking.
 
 ### Installation
 
