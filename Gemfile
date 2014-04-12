@@ -20,6 +20,11 @@ group :development do
   # gem 'capistrano-rails'
 end
 
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
+end
+
 gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
