@@ -38,3 +38,12 @@ main {
 section {
   @extend .row;
   }
+
+// Fix padding issue for buttons is dropdown-menu
+
+.mark-options {
+  width: 50px;
+  li {
+    padding: 3px;
+  }
+}

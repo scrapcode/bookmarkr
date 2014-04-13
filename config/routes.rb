@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: 'delete'
 
   # Marks
-  resources :marks, only: [:new, :create, :destroy]
+  resources :marks
   match '/marks/new/:title/*url', to: 'marks#new',
                                   format: false,
                                   constraints: { url: /.*/, title: /.*/ },

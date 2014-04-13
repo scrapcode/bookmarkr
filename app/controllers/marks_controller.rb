@@ -1,6 +1,6 @@
 class MarksController < ApplicationController
-  before_action :signed_in_user,   only: [:create, :destroy, :update]
-  before_action :correct_user,     only: [:update, :destroy]
+  before_action :signed_in_user,   only: [:create, :destroy, :update, :edit]
+  before_action :correct_user,     only: [:edit, :update, :destroy]
 
   def new
     unless params[:title] and params[:url]
@@ -32,12 +32,16 @@ class MarksController < ApplicationController
       end
     end
   end
+  
+  def edit
+    @mark = current_user.marks.find_by(id: params[:id])
+  end
 
   # PATCH/PUT /marks/1
   # PATCH/PUT /marks/1.json
   def update
     respond_to do |format|
-      if @mark.update(mark_params).
+      if @mark.update(mark_params)
         format.html { redirect_to root_path, notice: 'Mark was successfully updated.' }
         format.json { render :show, status: :ok, location: @mark }
       else
