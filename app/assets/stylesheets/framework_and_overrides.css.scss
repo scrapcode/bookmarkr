@@ -12,30 +12,16 @@ img {
   @extend .img-responsive;
   margin: 0 auto;
   }
-// override for the 'Home' navigation link
-.navbar {
-  margin-top: 20px;
-}
+
 
 h1 {
   padding: 0;
   margin: 0 0 10px 0;
 }
 
-// THESE ARE EXAMPLES YOU CAN MODIFY
-// create your own classes
-// to make views framework-neutral
-.column {
-  @extend .col-md-6;
-  @extend .text-center;
-  }
 .form {
-  @extend .col-md-6;
-  @extend .col-md-offset-3;
-  }
-.form-centered {
-  @extend .col-md-6;
-  @extend .text-center;
+  @extend .col-md-4;
+  @extend .col-md-offset-4;
   }
 .submit {
   @extend .btn;
@@ -46,6 +32,7 @@ h1 {
 // to make views framework-neutral
 main {
   @extend .container;
+  margin-top: 80px;
   padding-bottom: 80px;
   }
 section {

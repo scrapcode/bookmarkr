@@ -9,14 +9,13 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
+    <%= render 'layouts/navigation' %>
+
     <main role="main">
        <%= render 'layouts/messages' %>
        <%= yield %>
       <% if Rails.env.development? %>
-      <section style="margin-top: 50px;"><div class="col-md-6 col-md-offset-3"><b>DEBUG:</b><br><%= debug(params) %></div></section>
+      <section style="margin-top: 50px;"><div class="col-md-6 col-md-offset-3"><b>DEBUG:</b><br><%= debug(params) %><br><br>HTTP_REFERER: <%= request.env['HTTP_REFERER'] %><br>REMOTE_ADDR: <%= request.env['REMOTE_ADDR'] %></div></section>
       <% end %>
     </main>
   </body>

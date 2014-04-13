@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # ROOT
-  root 'static_pages#home'
+  root 'dashboard#index'
   
   # User Management
   resources :users

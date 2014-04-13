@@ -7,6 +7,7 @@ class MarksController < ApplicationController
       @mark = current_user.marks.new
     else
       @mark = current_user.marks.build(mark_params_remote)
+      @remote_addition = true
     end
   end
   
@@ -17,7 +18,13 @@ class MarksController < ApplicationController
 
     respond_to do |format|
       if @mark.save
-        format.html { redirect_to current_user, flash[:notice] => 'Mark was successfully created.' }
+        format.html {
+          if params[:remote]
+            render 'close'
+          else
+            redirect_to root_path, notice: "Mark was successfully created."
+          end
+        }
         format.json { render :show, status: :created, location: @mark }
       else
         format.html { render :new }
@@ -31,7 +38,7 @@ class MarksController < ApplicationController
   def update
     respond_to do |format|
       if @mark.update(mark_params).
-        format.html { redirect_to current_user, flash[:notice] => 'Mark was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Mark was successfully updated.' }
         format.json { render :show, status: :ok, location: @mark }
       else
         format.html { render :edit }
@@ -45,7 +52,7 @@ class MarksController < ApplicationController
   def destroy
     @mark.destroy
     respond_to do |format|
-      format.html { redirect_to current_user }
+      format.html { redirect_to root_path, notice: "Mark was deleted." }
       format.json { head :no_content }
     end
   end

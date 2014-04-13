@@ -1,0 +1,21 @@
+<tr>
+  <td><%= link_to mark.title, mark.url, :target => '_blank' %></td>
+  <td>
+    <% mark.tags.each do |tag| %>
+      <span class="badge badge-info"><%= tag.name.to_s %></span>
+    <% end %>
+  </td>
+  <td>
+    <% if mark.user == current_user %>
+      <div class="btn-group">
+        <button class="btn btn-xs pull-right dropdown-toggle" data-toggle="dropdown">
+          <span class="glyphicon glyphicon-cog"></span> <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <!-- dropdown menu links -->
+          <li><%= link_to "Delete", mark, method: :delete, confirm: "Are you sure?", class: "btn btn-xs btn-danger" %></li>
+        </ul>
+      </div>
+    <% end %>
+  </td>
+</tr>

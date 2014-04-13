@@ -1,6 +1,7 @@
-<%= form_for(@mark) do |f| %>
+
+    <%= form_for(@mark) do |f| %>
   <% if @mark.errors.any? %>
-    <div id="error_explanation">
+    <div id="alert alert-error">
       <h2><%= pluralize(@mark.errors.count, "error") %> prohibited this mark from being saved:</h2>
 
       <ul>
@@ -11,19 +12,22 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :url %><br>
-    <%= f.text_field :url %>
+    <%= f.text_field :url, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :tag_list, "Tags" %><br>
-    <%= f.text_field :tag_list %>
+    <%= f.text_field :tag_list, class: 'form-control' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <% if @remote_addition %>
+      <input type="hidden" name="remote" value="true">
+    <% end %>
+    <%= f.submit "Create markr", class: 'submit' %>
   </div>
 <% end %>
