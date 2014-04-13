@@ -3,6 +3,10 @@ By: [Cam Cecil](http://github.com/scrapcode)
 
 Open Source cloud bookmarking.
 
+### License
+
+Distrubuted under the [GNU General Public License v3.0 (GPL-3)](https://www.gnu.org/licenses/gpl-3.0.txt). A copy of this license is available in the LICENSE file.
+
 ### Installation
 
 1. git clone http://github.com/scrapcode/bookmarkr.git
@@ -20,5 +24,5 @@ javascript:(function(){var%20a=window,b=document,c=encodeURIComponent,d=a.open("
 _V0.0.1_
 * Complete recode from previous project [Zipmark](http://github.com/scrapcode/zipmark)
 * Using rails 4.1.0 instead of 3.*
-* Create own relationships model instead of relying on [acts_as_taggable_on](https://github.com/mbleigh/acts-as-taggable-on)
-* Upgrade to Bootstrap3 during development
+* Utilizes own relationships model instead of relying on [acts_as_taggable_on](https://github.com/mbleigh/acts-as-taggable-on) (although it's a great gem!)
+* Upgraded to Bootstrap3 during development
