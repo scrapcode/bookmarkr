@@ -4,6 +4,13 @@ class Mark < ActiveRecord::Base
   has_many :tag_mark_relationships
   has_many :tags, through: :tag_mark_relationships
 
+  # Validations
+
+  validates :title, presence: true,
+                   length: 3..57
+
+  validates :url, presence: true
+
   def tag_list=(tag_list)
     self.tags.clear
     
