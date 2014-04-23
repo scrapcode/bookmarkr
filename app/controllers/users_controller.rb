@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
     if @user.save
       sign_in @user
-      redirect_to root_path, notice: 'User was successfully created.'
+      redirect_to root_path
     else
       render :new
     end
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   def update
     if @user.update_attributes(user_params)
-      redirect_to @user, notice: 'User was successfully updated.'
+      redirect_to @user, notice: 'Your profile has been updated.'
     else
       render :edit
     end
