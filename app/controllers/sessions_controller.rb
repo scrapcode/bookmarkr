@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :check_signed_in, except: :destroy
+  
   def new
   end
 
@@ -18,4 +20,9 @@ class SessionsController < ApplicationController
     sign_out
     redirect_to root_url
   end
+  
+  private
+    def check_signed_in
+      redirect_to root_url, notice: "You're already logged in though..." if signed_in?
+    end
 end
