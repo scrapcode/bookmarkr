@@ -1,5 +1,5 @@
 class MarksController < ApplicationController
-  before_action :signed_in_user,   only: [:create, :destroy, :update, :edit]
+  before_action :signed_in_user
   before_action :correct_user,     only: [:edit, :update, :destroy]
 
   def new
@@ -12,24 +12,17 @@ class MarksController < ApplicationController
   end
   
   # POST /marks
-  # POST /marks.json
   def create
     @mark = current_user.marks.build(mark_params)
 
-    respond_to do |format|
-      if @mark.save
-        format.html {
-          if params[:remote]
-            render 'close'
-          else
-            redirect_to root_path, notice: "Mark was successfully created."
-          end
-        }
-        format.json { render :show, status: :created, location: @mark }
+    if @mark.save
+      if params[:remote]
+        render 'close'
       else
-        format.html { render :new }
-        format.json { render json: @mark.errors, status: :unprocessable_entity }
+        redirect_to root_path, notice: "Mark was successfully created."
       end
+    else
+      render :new 
     end
   end
   
@@ -38,27 +31,18 @@ class MarksController < ApplicationController
   end
 
   # PATCH/PUT /marks/1
-  # PATCH/PUT /marks/1.json
   def update
-    respond_to do |format|
-      if @mark.update(mark_params)
-        format.html { redirect_to root_path, notice: 'Mark was successfully updated.' }
-        format.json { render :show, status: :ok, location: @mark }
-      else
-        format.html { render :edit }
-        format.json { render json: @mark.errors, status: :unprocessable_entity }
-      end
+    if @mark.update(mark_params)
+      redirect_to root_path, notice: 'Mark was successfully updated.'
+    else
+      render :edit
     end
   end
 
   # DELETE /marks/1
-  # DELETE /marks/1.json
   def destroy
     @mark.destroy
-    respond_to do |format|
-      format.html { redirect_to root_path, notice: "Mark was deleted." }
-      format.json { head :no_content }
-    end
+    redirect_to root_path, notice: "Mark was deleted." 
   end
 
   private
