@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20140412033004) do
 
-  create_table "marks", force: true do |t|
+  create_table "marks", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "title"
     t.string   "url"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20140412033004) do
 
   add_index "marks", ["user_id"], name: "index_marks_on_user_id"
 
-  create_table "tag_mark_relationships", force: true do |t|
+  create_table "tag_mark_relationships", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "mark_id"
     t.datetime "created_at"
@@ -33,13 +33,13 @@ ActiveRecord::Schema.define(version: 20140412033004) do
   add_index "tag_mark_relationships", ["mark_id"], name: "index_tag_mark_relationships_on_mark_id"
   add_index "tag_mark_relationships", ["tag_id"], name: "index_tag_mark_relationships_on_tag_id"
 
-  create_table "tags", force: true do |t|
+  create_table "tags", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
