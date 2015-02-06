@@ -15,9 +15,7 @@ gem 'sdoc', '~> 0.4.0',     group: :doc
 group :development do
   gem 'sqlite3'
   gem 'spring'
-  gem 'debugger'
   gem 'rails_layout'
-  # gem 'capistrano-rails'
 end
 
 group :production do
@@ -26,6 +24,3 @@ group :production do
 end
 
 gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
