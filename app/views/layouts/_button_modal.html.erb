@@ -1,0 +1,25 @@
+<div class="modal fade" id="buttonModal" tablindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- The closing "X" -->
+                <button type="button" class="close" data-dismiss="modal" aria-lavel="Close"><span aria-hidden="true">&times;</span></button>
+                
+                <h4 class="modal-title">"The" Button</h4>
+            </div><!-- /.modal-header -->
+            
+            <div class="modal-body">
+                <p class="text-center">
+                  Drag the button below to your web browsers bookmarks bar.
+                </p>
+                <p class="text-center">
+                    <a href="javascript:(function(){var%20a=window,b=document,c=encodeURIComponent,d=a.open('http://bookmarkr.herokuapp.com/marks/new?title='+c(b.title)+'&url='+c(b.location),'bkmk_popup','left='+((a.screenX||a.screenLeft)+10)+',top='+((a.screenY||a.screenTop)+10)+',height=510px,width=550px,resizable=1,alwaysRaised=1');a.setTimeout(function(){d.focus()},300)})();" class="btn-huge">Bookmarkr It!</a>
+                </p>
+            </div><!-- /.modal-body -->
+            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div><!-- /.modal-footer -->
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

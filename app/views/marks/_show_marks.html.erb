@@ -1,13 +1,13 @@
-
 <% if @marks.count > 0 %>
+
 <section>
-<div class="col-md-8 col-md-offset-2">
+<div id="marks_table" class="col-md-8 col-md-offset-2">
   <table class="table table-striped">
     <thead>
       <tr>
-        <td width="30%"></td>
-        <td width="60%"></td>
-        <td width="10%"></td>
+        <th width="30%">Title</th>
+        <th width="60%">Tags</th>
+        <th width="10%">Options</th>
       </tr>
     </thead>
     <tbody>
@@ -16,6 +16,7 @@
   </table>
 </div>
 </section>
+
 <% else %>
 
 <div class="jumbotron">
@@ -25,4 +26,5 @@
   <p>3. Categorize your markrs using tags.</p>
   <p>4. See what others are marking within the same categories!</p>
 </div>
+
 <% end %>

@@ -1,5 +1,5 @@
 <tr>
-  <td><%= link_to mark.title, mark.url, :target => '_blank' %></td>
+  <td><%= link_to mark.title, mark.url, target: '_blank', role: 'button', title: mark.url, data: { toggle: "tooltip", placement: "left" } %></td>
   <td>
     <% mark.tags.each do |tag| %>
       <span class="badge badge-info"><%= tag.name.to_s %></span>
@@ -13,8 +13,8 @@
         </button>
         <ul class="dropdown-menu mark-options">
           <!-- dropdown menu links -->
-          <li><%= link_to "Edit", edit_mark_path(mark), class: "btn btn-xs btn-primary" %></li>
-          <li><%= link_to "Delete", mark, method: :delete, confirm: "Are you sure?", class: "btn btn-xs btn-danger" %></li>
+          <li><%= link_to '<span class="glyphicon glyphicon-pencil"></span> Edit'.html_safe, edit_mark_path(mark), class: "option-edit" %></li>
+          <li><%= link_to '<span class="glyphicon glyphicon-trash"></span> Delete'.html_safe, mark, method: :delete, data: { confirm: "Are you sure?" }, class: "option-delete" %></li>
         </ul>
       </div>
     <% end %>
