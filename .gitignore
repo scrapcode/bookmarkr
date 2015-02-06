@@ -17,3 +17,6 @@
 
 # Ignore sublime-text2 configuration files
 *.sublime*
+
+# Ignore Google Analytics ID config file
+/config/analytics_id.rb
