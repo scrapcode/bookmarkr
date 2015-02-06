@@ -1,6 +1,8 @@
 # Bookmarkr
 By: [Cam Cecil](http://github.com/scrapcode)
 
+[![Build Status](https://secure.travis-ci.org/scrapcode/bookmarkr.png?branch=master)](https://travis-ci.org/scrapcode/bookmarkr) [![Code Climate](https://codeclimate.com/github/scrapcode/bookmarkr.png)](https://codeclimate.com/github/scrapcode/bookmarkr) [![Dependency Status](https://gemnasium.com/scrapcode/bookmarkr.png)](https://gemnasium.com/scrapcode/bookmarkr) 
+
 Open Source cloud bookmarking.
 
 ### Example
