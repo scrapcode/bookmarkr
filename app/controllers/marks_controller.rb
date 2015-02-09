@@ -10,7 +10,7 @@ class MarksController < ApplicationController
       @remote_addition = true
     end
   end
-  
+
   # POST /marks
   def create
     @mark = current_user.marks.build(mark_params)
@@ -22,10 +22,10 @@ class MarksController < ApplicationController
         redirect_to root_path, notice: "Mark was successfully created."
       end
     else
-      render :new 
+      render :new
     end
   end
-  
+
   def edit
     @mark = current_user.marks.find_by(id: params[:id])
   end
@@ -42,7 +42,7 @@ class MarksController < ApplicationController
   # DELETE /marks/1
   def destroy
     @mark.destroy
-    redirect_to root_path, notice: "Mark was deleted." 
+    redirect_to root_path, notice: "Mark was deleted."
   end
 
   private
@@ -50,11 +50,11 @@ class MarksController < ApplicationController
     def mark_params
       params.require(:mark).permit(:title, :url, :tag_list)
     end
-    
+
   def mark_params_remote
     params.permit(:title, :url)
     end
-  
+
     def correct_user
       @mark = current_user.marks.find_by(id: params[:id])
       redirect_to root_url if @mark.nil?
