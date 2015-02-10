@@ -1,3 +1,5 @@
-<td><%= @mark.get('name') %></td>
-<td></td>
-<td></td>
+<td><a href="<%= @mark.get('url') %>"><%= @mark.get('title') %></a></td>
+<td>
+<%= @mark.get('tags') %>
+</td>
+<td>Ops</td>

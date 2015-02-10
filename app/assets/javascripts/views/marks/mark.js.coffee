@@ -1,4 +1,4 @@
-class Bookmarkr.View.Mark extends Backbone.View
+class Bookmarkr.Views.Mark extends Backbone.View
   template: JST['marks/mark']
   tagName: 'tr'
 
