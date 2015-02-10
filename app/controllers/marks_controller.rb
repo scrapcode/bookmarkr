@@ -4,7 +4,11 @@ class MarksController < ApplicationController
 
   def index
     respond_to do |format|
-      format.json { render json: current_user.marks.order("created_at DESC"), status: :ok }
+      format.json {
+        @marks = current_user.marks.order("created_at DESC")
+        render "marks/index"
+        # render json: current_user.marks.order("created_at DESC"), status: :ok }
+      }
     end
   end
 

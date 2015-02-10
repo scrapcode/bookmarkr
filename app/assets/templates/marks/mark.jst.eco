@@ -1,5 +1,10 @@
-<td><a href="<%= @mark.get('url') %>"><%= @mark.get('title') %></a></td>
+<% for key, data in @model: %>
+
+<td><a href="<%= data.get("mark").url %>"><%= data.get("mark").title %></a></td>
 <td>
-<%= @mark.get('tags') %>
+  <% for tag_key, tag_data in data.get("tags"): %>
+    <%= tag_data.get("name") %>
+  <% end %>
 </td>
 <td>Ops</td>
+<% end %>

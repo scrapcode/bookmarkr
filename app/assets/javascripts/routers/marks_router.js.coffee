@@ -7,6 +7,7 @@ class Bookmarkr.Routers.Marks extends Backbone.Router
   initialize: ->
     @collection = new Bookmarkr.Collections.Marks()
     @collection.fetch()
+    console.log(@collection)
 
   index: ->
     @marksIndexView = new Bookmarkr.Views.MarksIndex
