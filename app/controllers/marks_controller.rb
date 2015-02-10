@@ -7,7 +7,7 @@ class MarksController < ApplicationController
       format.json {
         @marks = current_user.marks.order("created_at DESC")
         render "marks/index"
-        # render json: current_user.marks.order("created_at DESC"), status: :ok }
+        #render json: current_user.marks.order("created_at DESC"), status: :ok
       }
     end
   end

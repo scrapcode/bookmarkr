@@ -3,6 +3,7 @@ class Bookmarkr.Views.Mark extends Backbone.View
   tagName: 'tr'
 
   initialize: ->
+    console.log("[i] mark.js.coffee initialized")
     @model.on('change', @render, this)
 
   render: ->
