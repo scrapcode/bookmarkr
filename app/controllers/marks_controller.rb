@@ -2,6 +2,12 @@ class MarksController < ApplicationController
   before_action :signed_in_user
   before_action :correct_user,     only: [:edit, :update, :destroy]
 
+  def index
+    respond_to do |format|
+      format.json { render json: current_user.marks.order("created_at DESC"), status: :ok }
+    end
+  end
+
   def new
     unless params[:title] and params[:url]
       @mark = current_user.marks.new
